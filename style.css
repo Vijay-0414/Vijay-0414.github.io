@@ -602,8 +602,8 @@ p {
 
   nav ul {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+	flex-wrap: wrap;
+	justify-content: content;
   }
 
   nav ul li {
