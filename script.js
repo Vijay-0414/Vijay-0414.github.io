@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const words = ["Python Developer", "Cloud Engineer", "Devops Engineer"];
+  const words = ["Cloud Support Engineer", "Devops Engineer", "Cloud Engineer"];
   let wordIndex = 0;
   let charIndex = 0;
   let currentWord = '';
@@ -33,11 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
   type();
 });
 
-
-
 // Animate progress bars
 const progressBars = document.querySelectorAll('.progress-done');
-
 progressBars.forEach(bar => {
     setTimeout(() => {
         bar.style.width = bar.getAttribute('data-done') + '%';
@@ -47,16 +44,13 @@ progressBars.forEach(bar => {
 
 // Animate circular skills
 const circles = document.querySelectorAll('.circle');
-
 circles.forEach(circle => {
     let percent = circle.getAttribute('data-percent');
     circle.style.setProperty('--percent', percent);
 });
 
-
 // Back to Top button functionality
 const backToTopButton = document.getElementById("backToTop");
-
 window.onscroll = function () {
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
     backToTopButton.style.display = "block";
@@ -64,7 +58,7 @@ window.onscroll = function () {
     backToTopButton.style.display = "none";
   }
 };
-
 backToTopButton.onclick = function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
