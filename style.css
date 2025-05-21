@@ -626,11 +626,18 @@ p {
     justify-content: center;
     margin: 20px 0;
   }
-  .intro-image {
+.intro-image {
+  order: 2 !important;
+  margin-top: 20px;
   padding: 10px;
   box-shadow: none;
   background: none;
   border-radius: 0;
+}
+
+.intro-image img {
+  width: 220px;
+  height: auto;
 }
 }
 
