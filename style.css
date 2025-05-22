@@ -43,7 +43,7 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   padding: 100px 80px;
-  background-color: #0c1a25;
+  /*background-color: #0c1a25;*/
 }
 
 .intro-text {
@@ -123,6 +123,28 @@ nav ul li a {
   box-shadow: 0 0 30px 15px rgba(0, 240, 255, 0.4);
 }
 
+@media screen and (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .intro-text {
+    order: 1;
+  }
+
+  .intro-image {
+    order: 2;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
 .about {
   display: flex;
   justify-content: space-between;
@@ -180,7 +202,7 @@ nav ul li a {
 
 .services {
   padding: 100px 20px;
-  background-color: #0c1a25;
+  /*background-color: #0c1a25;*/
   text-align: center;
 }
 
@@ -298,11 +320,12 @@ nav ul li a {
 }
 
 
-
 .skills-section {
   width: 80%;
   margin: auto;
   color: #fff;
+  background-color: #0c1a25;
+  position: relative;
 }
 
 .skills-section h3 {
@@ -449,7 +472,7 @@ p {
 .contact-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #0c1a25;
+  /*background-color: #0c1a25;*/
   color: white;
 }
 .contact-section h2 {
@@ -536,7 +559,6 @@ p {
   background-color: #00c4ff;
 }
 
-/* Consolidated Media Queries */
 @media screen and (max-width: 768px) {
   .intro, .about {
     flex-direction: column;
@@ -583,10 +605,6 @@ p {
   .intro-image {
     order: 2 !important;
     margin-top: 20px;
-    padding: 10px;
-    box-shadow: none;
-    background: none;
-    border-radius: 0;
   }
 
   .intro-image img {
@@ -596,24 +614,41 @@ p {
 
   nav ul {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: content;
+	flex-wrap: wrap;
+	justify-content: content;
   }
 
   nav ul li {
     margin: 10px;
   }
+}
 
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
   .intro-image.desktop-only {
     display: none;
   }
-
   .intro-image.mobile-only {
     display: flex;
     justify-content: center;
     margin: 20px 0;
   }
+.intro-image {
+  order: 2 !important;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
 
+.intro-image img {
+  width: 220px;
+  height: auto;
+}
+}
+
+@media screen and (max-width: 768px) {
   .circular-skills {
     flex-direction: column;
     align-items: center;
@@ -633,29 +668,22 @@ p {
   }
 }
 
-/* Animation Classes */
-.fade-in { animation: fadeIn 1.5s forwards; }
-.slide-up { animation: slideUp 1.2s forwards; }
-.slide-left { animation: slideLeft 1.2s forwards; }
-.slide-right { animation: slideRight 1.2s forwards; }
-.zoom-in { animation: zoomIn 1.2s forwards; }
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0c1a25;
+  z-index: -1;
+}
 
-@keyframes fadeIn {
-    to { opacity: 1; }
+
+.about,
+.services,
+.skills-section,
+.projects-section {
+  background-color: rgba(12, 26, 37, 0.85); /* dark with slight transparency */
+  padding: 60px 20px;
+  border-radius: 10px;
 }
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-@keyframes slideLeft {
-    from { transform: translateX(-20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-@keyframes slideRight {
-    from { transform: translateX(20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-@keyframes zoomIn {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
+
+
