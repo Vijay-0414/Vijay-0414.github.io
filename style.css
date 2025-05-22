@@ -321,11 +321,18 @@ nav ul li a {
 
 
 .skills-section {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  padding: 60px 20px;
   color: #fff;
-  background-color: #0c1a25;
+  background-color: rgba(12, 26, 37, 0.85);
+  border-radius: 10px;
   position: relative;
+  z-index: 1;
+}
+
+.skills-content {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .skills-section h3 {
