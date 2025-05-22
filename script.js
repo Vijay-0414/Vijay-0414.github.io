@@ -33,6 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   type();
+  
+  // Taggle Button
+const toggle = document.getElementById("menu-toggle");
+const navList = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+  navList.classList.toggle("show");
+});
+
+
+
 
   // Animate progress bars
   function animateProgressBars() {
