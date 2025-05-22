@@ -35,13 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
   type();
   
   // Taggle Button
-const toggle = document.getElementById("menu-toggle");
-const navList = document.querySelector("nav ul");
+const menuToggle = document.getElementById("menu-toggle");
+const sideMenu = document.getElementById("side-menu");
 
-toggle.addEventListener("click", () => {
-  navList.classList.toggle("show");
+menuToggle.addEventListener("click", () => {
+  sideMenu.classList.toggle("open");
 });
-
 
 
 

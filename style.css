@@ -790,4 +790,68 @@ p {
   border-radius: 10px;
 }
 
+/* Hamburger icon */
+.side-menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00f0ff;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+/* Side Menu default hidden */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(12, 26, 37, 0.98);
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.side-menu ul li a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+  color: white;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+/* When open class is added */
+.side-menu.open {
+  left: 0;
+}
+
+/* Only apply this layout for screens < 768px */
+@media screen and (max-width: 768px) {
+  .side-menu-toggle {
+    display: block;
+  }
+
+  /* Hide your normal top nav when on mobile */
+  header nav, .nav-container {
+    display: none;
+  }
+}
 
