@@ -107,3 +107,24 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 });
+
+
+// Reveal animation on scroll that repeats
+const revealElements = document.querySelectorAll('[data-animate]');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const animation = entry.target.getAttribute('data-animate');
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add(animation);
+    } else {
+      entry.target.classList.remove(animation);
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
