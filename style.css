@@ -38,46 +38,16 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li a {
-  position: relative;
-  color: #00f0ff;
-  font-weight: bold;
-  text-decoration: none;
-  overflow: hidden;
-  padding: 5px 10px;
-  transition: color 0.3s;
-}
-
-nav ul li a {
-  position: relative;
-  display: inline-block;
-  color: #00f0ff;
-  font-weight: bold;
-  padding: 5px 12px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-nav ul li a {
-  position: relative;
-  display: inline-block;
-  color: #09131c; /* dark text for white header */
-  font-weight: bold;
-  padding: 5px 12px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
 
 nav ul li a {
   position: relative;
   display: inline-block;
   color: rgba(255, 255, 255, 0.3); /* Low opacity text */
   font-weight: bold;
-  padding: 5px 12px;
+  padding: 5px 2px;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 nav ul li a::before {
