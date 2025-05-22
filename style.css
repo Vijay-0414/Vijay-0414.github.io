@@ -99,12 +99,15 @@ nav ul li a:hover {
   color: #00f0ff;
 }
 
-/* Responsive nav */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+}
 
+
+/* Responsive nav */
+@media screen and (max-width: 768px) {
   nav ul {
     display: none;
     flex-direction: column;
@@ -127,6 +130,7 @@ nav ul li a:hover {
     text-align: center;
   }
 }
+
 
 
 
