@@ -925,7 +925,7 @@ p {
 
 
 .dropdown-menu {
-  height: 45vh;
+  height: auto;
   overflow: hidden;
   display: none;
   flex-direction: column;
