@@ -947,7 +947,7 @@ p {
   display: flex;
   flex-direction: column; /* stack items vertically */
   align-items: flex-start; /* align items to left edge */
-  justify-content: center; /* center vertically */
+  justify-content: flex-start; /* center vertically */
   list-style: none;
   padding: 0 20px;
   margin: 0;
