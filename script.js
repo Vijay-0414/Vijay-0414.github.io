@@ -33,16 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   type();
-  
-  // Taggle Button
-const menuToggle = document.getElementById("menu-toggle");
-const sideMenu = document.getElementById("side-menu");
-
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.toggle("open");
-});
-
-
 
   // Animate progress bars
   function animateProgressBars() {
@@ -116,4 +106,26 @@ menuToggle.addEventListener("click", () => {
   backToTopButton.onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  // Navigation link's in Mobile View
+  const menuIcon = document.getElementById("menu-icon");
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuIcon.addEventListener("click", () => {
+    dropdownMenu.style.display = "flex";
+    menuIcon.classList.add("hidden");         // ✅ Hides ☰
+  });
+
+  closeIcon.addEventListener("click", () => {
+    dropdownMenu.style.display = "none";
+    menuIcon.classList.remove("hidden");      // ✅ Shows ☰
+  });
+
+  document.querySelectorAll("#dropdown-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      dropdownMenu.style.display = "none";
+      menuIcon.classList.remove("hidden");    // ✅ Shows ☰
+    });
+  });
 });

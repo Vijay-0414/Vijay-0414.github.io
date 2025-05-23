@@ -12,26 +12,24 @@
 	<div id="particles-js"></div>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">VJ</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <nav id="navbar">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<nav class="main-nav">
+  <div class="menu-icon" id="menu-icon">
+    <i class="fas fa-bars"></i>
   </div>
-</header>
-<!-- Mobile Hamburger Icon -->
-<div class="side-menu-toggle" id="menu-toggle">&#9776;</div>
 
-<!-- Slide-out Side Menu -->
-<nav class="side-menu" id="side-menu">
+  <ul class="desktop-nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+<div class="dropdown-menu" id="dropdown-menu">
+  <div class="close-icon" id="close-icon">
+    <i class="fas fa-times"></i>
+  </div>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -40,9 +38,11 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+</div>
+
 </nav>
 
-  
+</header>
 
 
   <section class="intro" data-animate="slide-left" id="home">
