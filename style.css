@@ -592,16 +592,54 @@ p {
   margin-bottom: 10px;
   font-size: 14px;
 }
-.footer-social a {
-  margin: 0 10px;
-  color: #00f0ff;
-  font-size: 20px;
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: transform 0.3s ease;
 }
-.footer-social a:hover {
-  color: #00c4ff;
+
+.footer-icon:hover {
+  transform: scale(1.1);
 }
+
+/* Platform-specific brand colors */
+.footer-icon.facebook {
+  background-color: #3b5998;
+}
+
+.footer-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.footer-icon.twitter {
+  background-color: #1da1f2;
+}
+
+.footer-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.footer-icon.email {
+  background-color: #6c63ff; /* Choose a calm mail-related color */
+}
+.footer-icon.phone {
+  background-color: #25d366; /* WhatsApp green, commonly used for phone */
+}
+
+
 
 
 #backToTop {
