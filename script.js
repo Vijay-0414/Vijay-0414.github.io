@@ -112,20 +112,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropdownMenu = document.getElementById("dropdown-menu");
   const closeIcon = document.getElementById("close-icon");
 
+// Show dropdown
   menuIcon.addEventListener("click", () => {
-    dropdownMenu.style.display = "flex";
-    menuIcon.classList.add("hidden");         // ✅ Hides ☰
+  dropdownMenu.style.display = "flex";
+  menuIcon.style.display = "none"; // 🔁 Hide menu icon
+  document.body.style.overflow = "hidden"; // Optional: disable background scroll
   });
 
-  closeIcon.addEventListener("click", () => {
-    dropdownMenu.style.display = "none";
-    menuIcon.classList.remove("hidden");      // ✅ Shows ☰
+// Close dropdown when clicking close icon
+  closeIcon.addEventListener("click", closeDropdown);
+
+// Close dropdown when clicking anywhere outside the menu
+  document.addEventListener("click", function (e) {
+  const isClickInside = dropdownMenu.contains(e.target) || menuIcon.contains(e.target);
+  if (!isClickInside) {
+    closeDropdown();
+  }
   });
 
+// Close dropdown on scroll
+window.addEventListener("scroll", closeDropdown);
+
+// Close dropdown function
+function closeDropdown() {
+  dropdownMenu.style.display = "none";
+
+  // ✅ Only show tap icon on mobile view
+  if (window.innerWidth <= 768) {
+    menuIcon.style.display = "block";
+  }
+
+  document.body.style.overflow = "";
+}
+
+  // Close dropdown when clicking a nav link
   document.querySelectorAll("#dropdown-menu a").forEach(link => {
     link.addEventListener("click", () => {
-      dropdownMenu.style.display = "none";
-      menuIcon.classList.remove("hidden");    // ✅ Shows ☰
+      closeDropdown();
     });
   });
+
 });

@@ -954,9 +954,6 @@ p {
 }
 
 
-
-
-
 .dropdown-menu ul li {
   justify-self: start;
 }
@@ -991,6 +988,7 @@ p {
     display: block;
   }
 }
+
 
 .hidden {
   display: none !important;
