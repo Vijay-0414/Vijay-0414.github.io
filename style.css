@@ -929,12 +929,13 @@ p {
   overflow: hidden;
   display: none;
   flex-direction: column;
+  align-items: flex-start;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #0c1a25;
-  padding: 60px 0 0 0;
+  padding: 5px 0 0 0;
   z-index: 1000;
   border-bottom: 1px solid #00f0ff;
 }
@@ -943,24 +944,32 @@ p {
 .dropdown-menu ul {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: repeat(6, 1fr); /* 6 rows for 6 links */
-  align-items: flex-start;
-  justify-items: start;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: flex-start; /* align items to left edge */
+  justify-content: center; /* center vertically */
   list-style: none;
-  padding: 0 30px;
+  padding: 0 20px;
   margin: 0;
 }
 
 
+
+
+
+.dropdown-menu ul li {
+  justify-self: start;
+}
+
 .dropdown-menu ul li a {
+  display: inline-block;
   color: #00f0ff;
   font-size: 18px;
   text-decoration: none;
   font-weight: 600;
-  width: 100%;
-  display: block;
   text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
 .close-icon {
