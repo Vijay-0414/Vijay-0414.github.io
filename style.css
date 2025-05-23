@@ -17,9 +17,16 @@ html {
   scroll-behavior: smooth;
 }
 
+
 header {
-  background-color: #0c1a25;
   padding: 20px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(12, 26, 37, 0.95); /* Slightly opaque */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #00f0ff;
 }
 
 nav ul {
@@ -199,6 +206,7 @@ nav ul li a:hover {
   align-items: center;
   padding: 100px 80px;
   background-color: #0c1a25;
+  scroll-margin-top: 50px;
 }
 
 .about-text {
@@ -252,6 +260,7 @@ nav ul li a:hover {
   padding: 100px 20px;
   /*background-color: #0c1a25;*/
   text-align: center;
+  scroll-margin-top: 50px;
 }
 
 .services h2 {
@@ -376,6 +385,7 @@ nav ul li a:hover {
   border-radius: 10px;
   position: relative;
   z-index: 1;
+  scroll-margin-top: 50px;
 }
 
 .skills-content {
@@ -476,6 +486,7 @@ p {
 .projects-section {
   text-align: center;
   padding: 60px 20px;
+  scroll-margin-top: 50px;
 }
 .projects-section h2 {
   font-size: 32px;
@@ -529,6 +540,7 @@ p {
   text-align: center;
   /*background-color: #0c1a25;*/
   color: white;
+  scroll-margin-top: 30px;
 }
 .contact-section h2 {
   font-size: 28px;
@@ -620,6 +632,7 @@ p {
     align-items: center;
     padding: 50px 20px;
     text-align: center;
+	padding-top: 80px;
   }
 
   .intro-text, .about-text {
@@ -755,7 +768,7 @@ p {
 }
 
 .desktop-nav a {
-  color: white;
+  color: #00f0ff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -913,32 +926,42 @@ p {
 /* ===== MOBILE MENU STYLING ===== */
 
 .menu-icon {
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   font-size: 28px;
   color: #00f0ff;
   cursor: pointer;
-  position: fixed;      /* ✅ Stay fixed at the top */
-  top: 25px;            /* ✅ Adjust vertical padding */
-  left: 20px;           /* ✅ Left aligned */
   z-index: 1001;
 }
 
 
+
+/* Dropdown panel hidden by default with transition */
 .dropdown-menu {
-  height: auto;
+  max-height: 0;
   overflow: hidden;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   background-color: #0c1a25;
-  padding: 5px 0 0 0;
+  padding: 0 20px;
   z-index: 1000;
   border-bottom: 1px solid #00f0ff;
+  transition: max-height 0.4s ease-in-out, padding 0.3s ease;
 }
+
+/* When menu is active (animated open) */
+.dropdown-menu.show {
+  max-height: 500px; /* adjust based on content */
+  padding: 20px;
+}
+
 
 
 .dropdown-menu ul {
@@ -989,8 +1012,20 @@ p {
   }
 }
 
-
 .hidden {
   display: none !important;
 }
+
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .close-icon {
+    display: none !important;
+  }
+}
+
 

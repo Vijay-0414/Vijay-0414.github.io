@@ -114,10 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Show dropdown
   menuIcon.addEventListener("click", () => {
-  dropdownMenu.style.display = "flex";
-  menuIcon.style.display = "none"; // 🔁 Hide menu icon
-  document.body.style.overflow = "hidden"; // Optional: disable background scroll
-  });
+  dropdownMenu.classList.add("show");
+  menuIcon.style.display = "none";
+  closeIcon.style.display = "block";
+});
+
 
 // Close dropdown when clicking close icon
   closeIcon.addEventListener("click", closeDropdown);
@@ -135,7 +136,7 @@ window.addEventListener("scroll", closeDropdown);
 
 // Close dropdown function
 function closeDropdown() {
-  dropdownMenu.style.display = "none";
+  dropdownMenu.classList.remove("show");
 
   // ✅ Only show tap icon on mobile view
   if (window.innerWidth <= 768) {
