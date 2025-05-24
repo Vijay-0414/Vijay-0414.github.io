@@ -111,13 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.getElementById("menu-icon");
   const dropdownMenu = document.getElementById("dropdown-menu");
   const closeIcon = document.getElementById("close-icon");
-
-// Show dropdown
-  menuIcon.addEventListener("click", () => {
-  dropdownMenu.classList.add("show");
-  menuIcon.style.display = "none";
-  closeIcon.style.display = "block";
-});
+  const welcomeText = document.getElementById("welcome-text");
 
 
 // Close dropdown when clicking close icon
@@ -134,17 +128,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // Close dropdown on scroll
 window.addEventListener("scroll", closeDropdown);
 
+// Show dropdown
+menuIcon.addEventListener("click", () => {
+  dropdownMenu.classList.add("show");
+  menuIcon.style.display = "none";
+  closeIcon.style.display = "block";
+  // ✅ Change welcome text when menu opens
+  if (welcomeText) {
+    welcomeText.textContent = "Start Small, Stay Consistent, Think Big";
+  }
+});
+
+// Close dropdown when clicking close icon
+closeIcon.addEventListener("click", closeDropdown);
+
 // Close dropdown function
 function closeDropdown() {
   dropdownMenu.classList.remove("show");
 
-  // ✅ Only show tap icon on mobile view
-  if (window.innerWidth <= 768) {
-    menuIcon.style.display = "block";
-  }
-
-  document.body.style.overflow = "";
+  setTimeout(() => {
+    if (window.innerWidth <= 768) {
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+      // ✅ Restore welcome text when menu closes
+      if (welcomeText) {
+        welcomeText.textContent = "Welcome to my Page";
+      }
+    }
+  }, 400); // Matches max-height transition time
 }
+
 
   // Close dropdown when clicking a nav link
   document.querySelectorAll("#dropdown-menu a").forEach(link => {
