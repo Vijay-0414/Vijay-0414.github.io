@@ -1022,6 +1022,11 @@ p {
   line-height: 1;
 }
 
+.close-icon:focus {
+  outline: none;
+}
+
+
 /* Dropdown panel hidden by default with transition */
 .dropdown-menu {
   padding: 2px 2px; /* vertical & horizontal */
