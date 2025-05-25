@@ -19,20 +19,33 @@ html {
 
 
 header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 5px 20px 2px;
-  height: 60px;
   background-color: rgba(12, 26, 37, 0.95);
+  height: 60px;
+  width: 100%;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 12px;
+  justify-content: space-between;
+}
 
 nav ul {
   list-style-type: none;
@@ -200,10 +213,6 @@ nav ul li a:hover {
     margin-top: 20px;
   }
 }
-
-
-
-
 
 .about {
   display: flex;
@@ -893,8 +902,10 @@ p {
 /* === Desktop Navigation === */
 .desktop-nav {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto; /* ✅ Pushes to the right */
   list-style: none;
+  padding: 0;
 }
 
 .desktop-nav li {
@@ -902,10 +913,13 @@ p {
 }
 
 .desktop-nav a {
-  color: white;
+  color: #00f0ff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
+  padding: 8px 10px;
 }
+
 
 /* === Hide Mobile Overlay & Hamburger on Desktop === */
 .nav-overlay,
@@ -1051,16 +1065,22 @@ p {
   margin-left: 0;
 }
 
+
+
 .close-icon {
-  position: static;
-  top: 20px;
-  right: 30px;
+  display: none;
+  position: relative;
   font-size: 28px;
   color: #00f0ff;
   cursor: pointer;
-  transform: none;
-  display: none;
+  z-index: 1001;
+  width: fit-content; /* ✅ limit width to icon */
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 }
+
 
 /* Show menu icon only on mobile */
 @media screen and (max-width: 768px) {
@@ -1097,63 +1117,58 @@ p {
   z-index: 1001;
 }
 
-.menu-icon,
-.close-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-48%);
-  font-size: 28px;
-  color: #00f0ff;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.menu-icon i,
-.close-icon i {
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.welcome-text {
-  font-family: 'Georgia', 'Segoe UI', sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 14px;
-  color: #ffdb58; /* bright gold-like color */
-  margin-left: 10px;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-/* Only show on mobile */
-@media screen and (min-width: 769px) {
-  .welcome-text {
-    display: none;
-  }
-}
-
-/* New wrapper for icon + welcome text */
 .mobile-header-left {
   display: flex;
   align-items: center;
+  padding-left: 5px;     /* ⬅️ Decrease left space */
+  padding-right: 10px;
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Welcome text stays aligned with icon */
+.menu-icon,
+.close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  color: #00f0ff;
+  cursor: pointer;
+  z-index: 1001;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
 .welcome-text {
+  flex-grow: 1;
   font-family: 'Georgia', 'Segoe UI', sans-serif;
   font-style: italic;
   font-weight: bold;
   font-size: 14px;
   color: #ffdb58;
-  margin-left: 8px;
-  display: flex;
-  align-items: center;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: flex;
+  align-items: center;     /* ✅ vertical center */
+  justify-content: center; /* ✅ horizontal center in available space */
+  height: 100%;
 }
+
+.menu-icon {
+  display: flex;
+}
+
+.close-icon {
+  display: none;
+}
+
+
+
 
 /* Show only on mobile */
 @media screen and (min-width: 769px) {
