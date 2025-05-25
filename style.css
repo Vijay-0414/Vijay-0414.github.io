@@ -1022,8 +1022,11 @@ p {
   line-height: 1;
 }
 
+/* Prevent focus outline on icon buttons */
+.menu-icon:focus,
 .close-icon:focus {
   outline: none;
+  box-shadow: none;
 }
 
 
