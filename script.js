@@ -152,7 +152,7 @@ function closeDropdown() {
       menuIcon.style.display = "block";
       // ✅ Restore welcome text when menu closes
       if (welcomeText) {
-        welcomeText.textContent = "Welcome to my Page";
+        welcomeText.textContent = "Welcome To My Profile";
       }
     }
   }, 400); // Matches max-height transition time

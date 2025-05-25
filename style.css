@@ -1007,7 +1007,20 @@ p {
   z-index: 1001;
 }
 
-
+.close-icon {
+  display: none;
+  position: static;
+  transform: none;
+  font-size: 28px;
+  color: #00f0ff;
+  cursor: pointer;
+  z-index: 1001;
+  width: fit-content; /* ✅ limit width to icon */
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
 
 /* Dropdown panel hidden by default with transition */
 .dropdown-menu {
@@ -1056,29 +1069,16 @@ p {
 
 .dropdown-menu ul li a {
   display: inline-block;
-  color: #00f0ff;
-  font-size: 18px;
+  font-family: 'Georgia', 'Segoe UI', sans-serif;
+
+  font-weight: bold;
+  color: red;
+  font-size: 14px;
   text-decoration: none;
   font-weight: 600;
   text-align: left;
   padding-left: 0;
   margin-left: 0;
-}
-
-
-
-.close-icon {
-  display: none;
-  position: relative;
-  font-size: 28px;
-  color: #00f0ff;
-  cursor: pointer;
-  z-index: 1001;
-  width: fit-content; /* ✅ limit width to icon */
-  height: fit-content;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
 }
 
 
