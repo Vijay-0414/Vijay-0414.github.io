@@ -1059,6 +1059,7 @@ p {
   color: #00f0ff;
   cursor: pointer;
   transform: none;
+  display: none;
 }
 
 /* Show menu icon only on mobile */
@@ -1112,11 +1113,6 @@ p {
 .close-icon i {
   line-height: 1;
   vertical-align: middle;
-}
-
-
-.close-icon {
-  display: none; /* initially hidden */
 }
 
 .welcome-text {
