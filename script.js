@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Typing effect
-  const words = ["Cloud Support Engineer", "Devops Engineer", "Cloud Engineer"];
+  const words = ["Cloud Engineer", "Devops Engineer", "Cloud Support Engineer", "SQL Developer"];
   let wordIndex = 0;
   let charIndex = 0;
   let currentWord = '';
